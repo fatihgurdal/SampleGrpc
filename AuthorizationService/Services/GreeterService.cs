@@ -22,5 +22,14 @@ namespace AuthorizationService
                 Message = "Hello " + request.Name
             });
         }
+
+        public override Task<LoginReply> Login(LoginRequest request, ServerCallContext context)
+        {
+            return Task.FromResult(new LoginReply
+            {
+                Verification = (request.Username=="fgurdal" && request.Password=="1461"),
+                Message = (request.Username == "fgurdal" && request.Password == "1461")?"Login Succes":"User Name or Password not correct"
+            });
+        }
     }
 }
