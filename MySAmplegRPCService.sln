@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NodeService", "NodeService\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FilesService", "FilesService\FilesService.csproj", "{773D2187-3545-4CA8-A3C5-8DD54CD7E45C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NodeWebAPI", "NodeWebAPI\NodeWebAPI.csproj", "{B2C53EDA-BC58-475B-BAB9-E2EAF022C14C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NodeWebAPI", "NodeWebAPI\NodeWebAPI.csproj", "{B2C53EDA-BC58-475B-BAB9-E2EAF022C14C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrpcClient", "GrpcClient\GrpcClient.csproj", "{771FF968-8296-4904-980B-82FB70964739}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{B2C53EDA-BC58-475B-BAB9-E2EAF022C14C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B2C53EDA-BC58-475B-BAB9-E2EAF022C14C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B2C53EDA-BC58-475B-BAB9-E2EAF022C14C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{771FF968-8296-4904-980B-82FB70964739}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{771FF968-8296-4904-980B-82FB70964739}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{771FF968-8296-4904-980B-82FB70964739}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{771FF968-8296-4904-980B-82FB70964739}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
