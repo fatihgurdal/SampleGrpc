@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AuthorizationService1;
 using Grpc.Core;
 using Microsoft.Extensions.Logging;
 
@@ -20,6 +21,15 @@ namespace AuthorizationService
             return Task.FromResult(new HelloReply
             {
                 Message = "Hello " + request.Name
+            });
+        }
+
+        public override Task<LoginReply> Login(LoginRequest request, ServerCallContext context)
+        {
+            return Task.FromResult(new LoginReply
+            {
+                Verification = (request.Username=="fgurdal" && request.Password=="1461"),
+                Message = (request.Username == "fgurdal" && request.Password == "1461")?"Login Succes":"User Name or Password not correct"
             });
         }
     }
