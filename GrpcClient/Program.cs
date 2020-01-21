@@ -9,8 +9,8 @@ namespace GrpcClient
         {
             Console.WriteLine("Hello World!");
 
-            var channel = GrpcChannel.ForAddress("");
-           var client = new AuthorizationService.cli
+            //var channel = GrpcChannel.ForAddress("");
+            //var client = new AuthorizationService.cli
         }
     }
 }

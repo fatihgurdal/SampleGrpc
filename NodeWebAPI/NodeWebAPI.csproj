@@ -7,10 +7,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Protobuf Include="..\..\Proto\*.proto" GrpcServices="Server" />
-    <None Remove="Protos\greet.proto" />
     <Content Include="@(Protobuf)" LinkBase="" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Grpc.AspNetCore" Version="2.23.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.0.0">
       <PrivateAssets>all</PrivateAssets>
@@ -31,7 +31,12 @@
     <ProjectReference Include="..\AuthorizationService\AuthorizationService.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Protobuf Include="Protos\greet.proto" GrpcServices="Server" />
+    <Folder Include="Protos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Protobuf Include="..\AuthorizationService\Protos\greet.proto" GrpcServices="Client">
+      <Link>Protos\greet.proto</Link>
+    </Protobuf>
   </ItemGroup>
 
 </Project>
