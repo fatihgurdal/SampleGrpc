@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FilesService", "FilesServic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NodeWebAPI", "NodeWebAPI\NodeWebAPI.csproj", "{B2C53EDA-BC58-475B-BAB9-E2EAF022C14C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrpcClient", "GrpcClient\GrpcClient.csproj", "{771FF968-8296-4904-980B-82FB70964739}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrpcClient", "GrpcClient\GrpcClient.csproj", "{771FF968-8296-4904-980B-82FB70964739}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

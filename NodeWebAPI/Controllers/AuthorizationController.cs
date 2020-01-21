@@ -22,19 +22,13 @@ namespace NodeWebAPI.Controllers
         [HttpPost]
         public IActionResult Login([FromBody]LoginRequestModel request)
         {
-            ////var hello = new HelloRequest() { Name = "fatih gürdal" };
+            var channel = GrpcChannel.ForAddress("https://localhost:4001");
+            var client = new Greeter.GreeterClient(channel);
 
-            //var channel = GrpcChannel.ForAddress("http://localhost:5012");
-            //var client = new Greeter.GreeterClient(channel);
+            var input = new LoginRequest() { Password = request.Password, Username = request.UserName };
+            var result = client.Login(input);
 
-            //var cevap = client.SayHello(new HelloRequest() { Name = "fatih1" });
-
-            ////var response = new LoginResponseModel()
-            ////{
-            ////    Success = false,
-            ////    Message = "Hazır değil"
-            ////};
-            return new JsonResult("test");
+            return new JsonResult($"{result.Message} - {result.Verification}");
         }
     }
 }
