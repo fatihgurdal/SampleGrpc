@@ -9,6 +9,7 @@ service Greeter {
   // Sends a greeting
   rpc SayHello (HelloRequest) returns (HelloReply);
   rpc Login (LoginRequest) returns (LoginReply);
+  rpc UserInfo (UserInfoRequest) returns (UserInfoReply);
 }
 
 // The request message containing the user's name.
@@ -28,4 +29,15 @@ message LoginRequest {
 message LoginReply {
   bool verification = 1;
   string message = 2;
+}
+message UserInfoRequest {
+   string UserName=1;
+}
+message UserInfoReply {
+  string UserName=1;
+  string EMail=2;
+  string FirstName=3;
+  string LastName=4;
+  string PhoneNumber=5;
+  string Title=6;
 }

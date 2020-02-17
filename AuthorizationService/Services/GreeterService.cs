@@ -32,5 +32,9 @@ namespace AuthorizationService
         {
             return Task.FromResult(UserManager.Login(request.Dto()).Message());
         }
+        public override Task<UserInfoReply> UserInfo(UserInfoRequest request, ServerCallContext context)
+        {
+            return Task.FromResult(UserManager.GetUser(request.Dto()).Message());
+        }
     }
 }

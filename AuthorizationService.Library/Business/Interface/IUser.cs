@@ -9,5 +9,6 @@ namespace AuthorizationService.Library.Business.Interface
     public interface IUser
     {
         LoginReply Login(LoginRequest request);
+        UserInfoReply GetUser(UserInfoRequest request);
     }
 }

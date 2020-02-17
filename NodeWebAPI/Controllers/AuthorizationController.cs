@@ -34,7 +34,22 @@ namespace NodeWebAPI.Controllers
                 else
                     return BadRequest(result);
             }
-            
+        }
+        [HttpGet]
+        public ActionResult GetUser([FromQuery]string username)
+        {
+            using (var channel = GrpcChannel.ForAddress(Environment.GetEnvironmentVariable(ApiConst.AuthorizationService)))
+            {
+                var client = new Greeter.GreeterClient(channel);
+
+                var input = new UserInfoRequest() { UserName = username };
+                var result = client.UserInfo(input);
+
+                if (string.IsNullOrEmpty(result.UserName))
+                    return NotFound($"{username} not found user. Try again.");
+                else
+                    return Ok(result);
+            }
         }
     }
 }
