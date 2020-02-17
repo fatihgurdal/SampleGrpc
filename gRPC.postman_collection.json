@@ -1,0 +1,89 @@
+{
+	"info": {
+		"_postman_id": "4929f277-ffd1-42aa-ac00-2925f802c7c7",
+		"name": "gRPC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"UserName\":\"fgurdal\",\n\t\"Password\":\"12461\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{WebApi}}/api/Authorization/Login",
+					"host": [
+						"{{WebApi}}"
+					],
+					"path": [
+						"api",
+						"Authorization",
+						"Login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetUser",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"UserName\":\"fgurdal\",\n\t\"Password\":\"12461\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{WebApi}}/api/Authorization/GetUser?username=fgurdal",
+					"host": [
+						"{{WebApi}}"
+					],
+					"path": [
+						"api",
+						"Authorization",
+						"GetUser"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "fgurdal"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
