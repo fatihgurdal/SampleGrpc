@@ -8,9 +8,9 @@ using AuthorizationService;
 using AuthorizationService1;
 using Grpc.Net.Client;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 using NodeWebAPI.Model.Request;
 using NodeWebAPI.Model.Response;
+using Microsoft.AspNetCore.Mvc;
 
 
 namespace NodeWebAPI.Controllers
@@ -20,15 +20,21 @@ namespace NodeWebAPI.Controllers
     public class AuthorizationController : ControllerBase
     {
         [HttpPost]
-        public IActionResult Login([FromBody]LoginRequestModel request)
+        public ActionResult Login([FromBody]LoginRequestModel request)
         {
-            var channel = GrpcChannel.ForAddress("https://localhost:4001");
-            var client = new Greeter.GreeterClient(channel);
+            using (var channel = GrpcChannel.ForAddress(Environment.GetEnvironmentVariable(ApiConst.AuthorizationService)))
+            {
+                var client = new Greeter.GreeterClient(channel);
 
-            var input = new LoginRequest() { Password = request.Password, Username = request.UserName };
-            var result = client.Login(input);
+                var input = new LoginRequest() { Password = request.Password, Username = request.UserName };
+                var result = client.Login(input);
 
-            return new JsonResult($"{result.Message} - {result.Verification}");
+                if (result.Verification)
+                    return Ok(result);
+                else
+                    return BadRequest(result);
+            }
+            
         }
     }
 }

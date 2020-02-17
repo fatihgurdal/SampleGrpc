@@ -15,6 +15,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NodeWebAPI", "NodeWebAPI\No
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrpcClient", "GrpcClient\GrpcClient.csproj", "{771FF968-8296-4904-980B-82FB70964739}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthorizationService.Library", "AuthorizationService.Library\AuthorizationService.Library.csproj", "{3BC91A76-3DA6-423F-A4DC-CE7B9DDB0F95}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{BB4269F9-8A97-47D3-9A6D-FC57A118F242}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,14 @@ Global
 		{771FF968-8296-4904-980B-82FB70964739}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{771FF968-8296-4904-980B-82FB70964739}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{771FF968-8296-4904-980B-82FB70964739}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BC91A76-3DA6-423F-A4DC-CE7B9DDB0F95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BC91A76-3DA6-423F-A4DC-CE7B9DDB0F95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BC91A76-3DA6-423F-A4DC-CE7B9DDB0F95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BC91A76-3DA6-423F-A4DC-CE7B9DDB0F95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB4269F9-8A97-47D3-9A6D-FC57A118F242}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB4269F9-8A97-47D3-9A6D-FC57A118F242}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB4269F9-8A97-47D3-9A6D-FC57A118F242}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB4269F9-8A97-47D3-9A6D-FC57A118F242}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
